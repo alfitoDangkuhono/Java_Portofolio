@@ -1,0 +1,4 @@
+validation database mini system atm(java)
+
+pergi ke xampp controler panel klik admin di database(mysql);
+import database selesai. 

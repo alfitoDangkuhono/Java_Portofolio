@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="Deposit.Deposit">
+  <grid id="27dc6" binding="panel" layout-manager="GridLayoutManager" row-count="4" column-count="10" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+    <margin top="0" left="0" bottom="0" right="0"/>
+    <constraints>
+      <xy x="20" y="20" width="566" height="374"/>
+    </constraints>
+    <properties>
+      <font name="Bauhaus 93" size="28" style="1"/>
+    </properties>
+    <border type="none"/>
+    <children>
+      <component id="cb2" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="0" column="1" row-span="1" col-span="8" vsize-policy="0" hsize-policy="0" anchor="1" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <font name="Bookshelf Symbol 7" size="28" style="1"/>
+          <icon value="img/cash.png"/>
+          <text value="DEPOSIT"/>
+          <verticalAlignment value="0"/>
+        </properties>
+      </component>
+      <hspacer id="2b2f5">
+        <constraints>
+          <grid row="0" column="9" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+      </hspacer>
+      <hspacer id="a8190">
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+      </hspacer>
+      <component id="e240d" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Nominal Deposit"/>
+        </properties>
+      </component>
+      <component id="f853e" class="javax.swing.JButton" binding="cancelBtn">
+        <constraints>
+          <grid row="3" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-393182"/>
+          <text value="Cancel"/>
+        </properties>
+      </component>
+      <component id="7566f" class="javax.swing.JTextField" binding="textFieldDeposit">
+        <constraints>
+          <grid row="2" column="3" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+        </constraints>
+        <properties/>
+      </component>
+      <component id="fd00a" class="javax.swing.JButton" binding="loginBtn">
+        <constraints>
+          <grid row="3" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-8810288"/>
+          <text value="Submit"/>
+        </properties>
+      </component>
+      <component id="82584" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Rp"/>
+        </properties>
+      </component>
+      <component id="ada83" class="javax.swing.JLabel" binding="label">
+        <constraints>
+          <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="No Rekening"/>
+        </properties>
+      </component>
+      <component id="9028a" class="javax.swing.JTextField" binding="textFieldNoRekening">
+        <constraints>
+          <grid row="1" column="3" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+        </constraints>
+        <properties>
+          <text value=""/>
+        </properties>
+      </component>
+    </children>
+  </grid>
+</form>
