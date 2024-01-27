@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table {
+          font-family: arial, sans-serif;
+          border-collapse: collapse;
+          width: 100%;
+        }
+
+        td, th {
+          border: 1px solid #dddddd;
+          text-align: left;
+          padding: 8px;
+        }
+
+        tr:nth-child(even) {
+          background-color: #dddddd;
+        }
+
+    </style>
+</head>
+<body>
+<h1>Aplikasi Data Kendaraan</h1><table>
+    <br>
+    <form method="Get" th:action="@{/api/search/{noRegistrasi}}">
+        <input type="search" name="noRegistrasi"  placeholder="Search.." />
+        <button type="submit">cari</button>
+        <br>
+    </form>
+    <br>
+    <a th:href="@{/create-data}"><button>Tambah Data</button></a>
+    <a th:href="@{/create-warna}"><button>Tambah Warna</button></a>
+    <br>
+    <br>
+    <br>
+    <tr>
+        <th>No Registrasi</th>
+        <th>Nama Pemilik</th>
+        <th>Merk Kendaraan</th>
+        <th>Tahun Pembuatan</th>
+        <th>Kapasitas Silinder</th>
+        <th>Warna</th>
+        <th>Bahan Bakar</th>
+        <th>Action</th>
+    </tr>
+    <tr th:each="data:${data}">
+        <td th:text="${data.noRegistrasi}"></td>
+        <td th:text="${data.name_pemilik}"></td>
+        <td th:text="${data.merk}"></td>
+        <td th:text="${data.tahun_pembuatan}"></td>
+        <td th:text="${data.kapasitas_silinder}+' ' + cc ">  </td>
+        <td th:text="${data.warnaKendaraan.nama_warna}"></td>
+        <td th:text="${data.bahan_bakar}"></td>
+        <td>
+            <a th:href="@{/detail-data/{id}(id=${data.noRegistrasi})}" class="btn-edit"><button>Detail</button></a>
+            <a th:href="@{/edit-data/{id}(id=${data.noRegistrasi})}" class="btn-edit"><button>Edit</button></a>
+            <button th:data-id="${data.noRegistrasi}"  th:onclick="myFunction(this.getAttribute('data-id'))">Delete</button>
+        </td>
+    </tr>
+</table>
+</body>
+<script th:inline="javascript">
+    function myFunction(id){
+        if(confirm("Are you sure want to delete " +id) ==true){
+            $.ajax({
+                type:"DELETE",
+                url:"http://localhost:8081/api/"+id,
+                success: function() {
+                    alert("success delete"),
+					location.reload(true)
+				}
+            });
+        }
+        else{
+            location.reload(true);
+        }
+    };
+</script>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<link th:href="@{https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css}" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Data</title>
+</head>
+<body>
+<div class="card " >
+    <div class="card-header">
+       <h1>Add Data</h1>
+    </div>
+    <div class="card-body">
+        <form th:action="@{/api/create}" method="post">
+            <div class="md-3">
+                <label  class="form-label">No. Registrasi Kendaraan</label>
+                <input type="text" name="no_registrasi"  class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label  class="form-label">Nama Pemilik</label>
+                <input type="text" name="nama_pemilik"  class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label  class="form-label">Merk Kendaraan</label>
+                <input type="text" name="merk_kendaraan"  class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label  class="form-label">Tahun Pembuatan</label>
+                <input type="text" name="tahun_pembuatan"  class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label  class="form-label">Kapasitas Silinder</label>
+                <input type="number" name="kapasitas_silinder"  class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label  class="form-label">Bahan Bakar</label>
+                <input type="text" name="bahan_bakar"  class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label  class="form-label">Warna Kendaraan</label>
+                <select name="warna" class="form-select" aria-label="Default select example" required>
+                    <option value="" selected disabled> Pilih Warna</option>
+                    <option th:each="warna:${data}" th:value="${warna.id}">
+                        <label th:text="${warna.nama_warna}"></label>
+                    </option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <div class="form-outline">
+                    <label class="form-label" for="textAreaExample2">Alamat</label>
+                    <textarea name="alamat" class="form-control" id="textAreaExample2" rows="4" required></textarea>
+                </div>
+            </div>
+            <br>
+            <br>
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="reset" class="btn btn-danger">Reset</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>
