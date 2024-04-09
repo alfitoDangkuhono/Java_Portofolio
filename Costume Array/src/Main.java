@@ -49,7 +49,7 @@ class Main{
 
     @Override
     public String toString() {
-        return "Data : "+Arrays.toString(data);
+        return "Data tersebut adalah  = : "+Arrays.toString(data);
     }
 
     public static void main(String[] args) {
