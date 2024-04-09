@@ -38,7 +38,7 @@ class Main{
     private void remove( int index) {
         for (int i = 0; i < data.length; i++) {
             if (i==index){
-                System.out.println("remove function index yang dihapus= "+'['+index+']'+" data array yang dihapus = "+ data[i]);
+                System.out.println("remove index array = "+'['+index+']'+" value array yang dihapus = "+ data[i]);
                 data[i]=0;
                 for (int j = i; j < data.length-1 ; j++) {
                     data[i]=data[++i];
